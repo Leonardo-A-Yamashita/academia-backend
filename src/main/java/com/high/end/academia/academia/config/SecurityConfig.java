@@ -12,13 +12,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .cors() // Habilita o CORS com a configuração definida na classe CorsConfig
+                .cors()
                 .and()
                 .authorizeHttpRequests()
                 .requestMatchers("/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .httpBasic(); // Habilita autenticação básica
+                .httpBasic();
         return http.build();
     }
 

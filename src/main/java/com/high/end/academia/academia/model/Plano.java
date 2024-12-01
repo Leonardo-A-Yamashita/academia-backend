@@ -1,13 +1,15 @@
 package com.high.end.academia.academia.model;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 @Entity
-@Table(name = "atividades")
-public class Atividade {
+@Table(name = "planos")
+public class Plano {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,8 +21,11 @@ public class Atividade {
     private String descricao;
 
     @Column(nullable = false)
-    private String professor;
+    private Double preco;
 
     @Column(nullable = false)
-    private String dataEntrega;
+    private boolean ativo;
+
+    @Column
+    private LocalDate vencimento;
 }
