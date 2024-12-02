@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AtividadeService {
@@ -20,6 +21,10 @@ public class AtividadeService {
 
     public List<Atividade> listarAtividades() {
         return atividadeRepository.findAll();
+    }
+
+    public Optional<Atividade> getAtividade(long id) {
+        return atividadeRepository.findById(id);
     }
 
     public void excluirAtividade(Long id) {

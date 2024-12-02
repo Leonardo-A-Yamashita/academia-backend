@@ -23,4 +23,7 @@ public class Atividade {
 
     @Column(nullable = false)
     private String dataEntrega;
+
+    private int vagas;
+    private int vagasDisponiveis;
 }
